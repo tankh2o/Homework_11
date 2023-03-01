@@ -4,15 +4,15 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) {
 
-        int year = 2023;
+        int year = 2020;
         boolean yearLeap = isYearLeap(year);
         System.out.println("Год = " + year + " , результат = " + yearLeap);
 
-        determineTypeOC(0, 2019);
+        determineTypeOC(0, 2015);
 
-        int distance = 30;
+        int distance = 40;
         int time = timeCounting(distance);
-        System.out.println("Потребуется " + time + " дней для дистанции " + distance);
+        System.out.println("Потребуется дней в количестве " + time + " для дистанции " + distance);
 
         }
         public static boolean isYearLeap(int year) {
