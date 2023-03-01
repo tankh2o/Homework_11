@@ -1,9 +1,57 @@
+import java.time.LocalDate;
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Задание 1");
-        //
+        int year = 2023;
+        boolean yearLeap = isYearLeap(year);
+        System.out.println("Год = " + year + " , результат = " + yearLeap);
 
+        determineTypeOC(0, 2019);
 
-    }
+        int distance = 30;
+        int time = timeCounting(distance);
+        System.out.println("Потребуется " + time + " дней для дистанции " + distance);
+
+        }
+        public static boolean isYearLeap(int year) {
+                if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        public static void determineTypeOC(int type, int deviceYear) {
+                int currentYear = LocalDate.now().getYear();
+                if (type == 0) {
+                    if (deviceYear < currentYear) {
+                        System.out.println("ios, light");
+                    } else {
+                        System.out.println("ios, normal");
+                    }
+                } else if (type == 1) {
+                    if (deviceYear < currentYear) {
+                        System.out.println("android, light");
+                    } else {
+                        System.out.println("android, normal");
+                    }
+                }
+            }
+        public static int timeCounting (int distance) {
+            if (distance <= 0 || distance > 100) {
+                return -1;
+            }
+            int time = 1;
+            if (distance >= 20) {
+                ++time;
+            }
+            if (distance >= 60) {
+                ++time;
+            }
+            return time;
+
+        }
 }
+
+
